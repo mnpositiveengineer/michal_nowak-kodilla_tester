@@ -20,8 +20,8 @@ public class Main_Random {
 
         // tworzę zmienną do której zwracam wynik metody getMax + wyświetlanie
 
-        int maxValue=object.getMax(totalResult);
-        System.out.println(maxValue);
+        //int maxValue=object.getMax(totalResult);
+        //System.out.println(maxValue);
 
     }
 }
