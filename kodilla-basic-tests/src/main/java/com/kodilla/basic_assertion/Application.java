@@ -31,7 +31,7 @@ public class Application {
 
         //do zmiennej zapisuję wynik z metody squre
 
-        int squareResult = calculator.square(a);
+        int squareResult = calculator.square(5, 2);
 
         boolean correct3 = ResultChecker.assertEquals(25, squareResult);
 
