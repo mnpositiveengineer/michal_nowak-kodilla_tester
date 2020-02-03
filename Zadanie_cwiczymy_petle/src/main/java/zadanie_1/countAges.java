@@ -1,3 +1,5 @@
+package zadanie_1;
+
 public class countAges {
     int totalAge = 0;
     double average;

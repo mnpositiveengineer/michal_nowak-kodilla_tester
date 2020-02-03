@@ -31,7 +31,4 @@ public class Application {
         Circle circle3 = new Circle(0, 0, 30, "circle3");
         circle1.displayParameters(circle3);
     }
-
-
-
 }

@@ -8,16 +8,26 @@ public class Rectangle extends Shape {
         super(sideLength, sideLength2, radius, shapeName);
     }
 
-    //narzucono nam zaimplementowanie metody obliczającej powierzchnię
+    @Override
+    public double calculateArea() {
+        return 0;
+    }
 
     @Override
+    public double calculateCircumference() {
+        return 0;
+    }
+
+    //narzucono nam zaimplementowanie metody obliczającej powierzchnię
+
+
     public double calculateArea(int sideLength, int sideLength2, int radius) {
         return sideLength * sideLength2;
     }
 
     //narzucono nam zaimplementowanie metody obliczającej obwód
 
-    @Override
+
     public double calculateCircumference(int sideLength, int sideLength2, int radius) {
         return sideLength * 2 + sideLength2 *2;
     }

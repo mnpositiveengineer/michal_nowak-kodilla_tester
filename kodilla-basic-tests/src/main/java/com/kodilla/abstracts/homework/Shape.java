@@ -41,9 +41,9 @@ public abstract class Shape {
 
     //tworzymy metodę narzucającą obliczenie powierzchni
 
-    public abstract double calculateArea(int sideLength, int sideLength2, int radius);
+    public abstract double calculateArea();
 
     //tworzymy metodę narzucającą obliczenie obwodu
 
-    public abstract double calculateCircumference(int sideLength, int sideLength2, int radius);
+    public abstract double calculateCircumference();
 }

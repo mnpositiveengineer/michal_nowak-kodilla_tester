@@ -1,3 +1,5 @@
+package zadanie_2;
+
 //import biblioteki liczb pseudolosowych
 import java.util.ArrayList;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.kodilla.inheritance.homewor;
+package com.kodilla.inheritance.homework;
 
 public class Crackdown extends OperatingSystem {
 

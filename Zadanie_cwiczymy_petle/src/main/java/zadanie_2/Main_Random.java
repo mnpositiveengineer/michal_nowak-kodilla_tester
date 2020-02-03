@@ -1,3 +1,5 @@
+package zadanie_2;
+
 public class Main_Random {
     public static void main(String[] args) {
 

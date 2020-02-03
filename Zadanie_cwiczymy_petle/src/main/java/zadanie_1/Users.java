@@ -1,3 +1,5 @@
+package zadanie_1;
+
 public class Users {
     String name;
     int age;

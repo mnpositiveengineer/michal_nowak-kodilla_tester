@@ -1,4 +1,6 @@
-package com.kodilla.inheritance.homewor;
+package com.kodilla.inheritance.homework;
+
+import java.util.ArrayList;
 
 public class OperatingSystem {
 
@@ -24,15 +26,12 @@ public class OperatingSystem {
         System.out.println("Operating system is turned off.");
     }
 
-    //tworzę gettera
-
-    public int getYear(){
-        return year;
-    }
-
     //tworzę metodę pokazującą rok
 
     public void displayYear(){
         System.out.println("Operating system year: " + year);
+    }
+    public int getYear(){
+        return year;
     }
 }
