@@ -12,8 +12,8 @@ public class Baker extends Job {
         System.out.println("- Bake donuts");
         System.out.println("- Bake donuts");
     }
-    public void displayIntro(Baker object){
-        System.out.println(object.firstName + " is " + object.age + " and he is a " + object.job + ". He earns " + object.salary);
+    public void displayIntro(){
+        System.out.println(getFirstName() + " is " + getAge() + " and he is a " + getJob() + ". He earns " + getSalary());
         System.out.println("His responsibilities are:");
     }
 }

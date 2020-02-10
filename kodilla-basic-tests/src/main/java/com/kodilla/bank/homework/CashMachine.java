@@ -25,7 +25,7 @@ public class CashMachine {
             if (cashAmount < 0){    //zliczam wypłaty (ilość i suma) - potrzebne do średniej
                 inMinusTransaction++;
                 sumOfInMinusTransaction = sumOfInMinusTransaction + cashAmount;
-            }else{                  // zliczam wpłaty (ilość i suma) - potrzebne do średniej
+            } else {                  // zliczam wpłaty (ilość i suma) - potrzebne do średniej
                 inPlusTransaction++;
                 sumOfInPlusTransaction = sumOfInPlusTransaction + cashAmount;
             }

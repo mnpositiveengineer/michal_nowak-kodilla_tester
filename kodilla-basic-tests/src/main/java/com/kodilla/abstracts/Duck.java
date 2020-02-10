@@ -7,7 +7,6 @@ public class Duck extends Animal{
     }
 
     @Override
-    public void giveVoice() {
-        System.out.println("Quack");
+    public void giveVoice() { System.out.println("Quack");
     }
 }

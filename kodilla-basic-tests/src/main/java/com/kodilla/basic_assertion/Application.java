@@ -9,7 +9,7 @@ public class Application {
         boolean correct = ResultChecker.assertEquals(13, sumResult);  //wygląda na to, że nie musieliśmy tutaj tworzyć obiektu bo metoda jest statyczna.
         if (correct){
             System.out.println("Metoda adding działa poprawnie dla liczb " + a + " i " + b);
-        }else{
+        } else {
             System.out.println("Metoda adding nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
@@ -25,7 +25,7 @@ public class Application {
 
         if (correct2){
             System.out.println("Metoda subtraction działa poprawnie dla liczb " + a + " i " + b);
-        }else{
+        } else {
             System.out.println("Metoda subtraction nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
@@ -37,7 +37,7 @@ public class Application {
 
         if (correct3){
             System.out.println("Metoda square działa poprawnie dla liczby " + a);
-        }else{
+        } else {
             System.out.println("Metoda square nie działa poprawnie dla liczby " + a);
         }
     }

@@ -1,10 +1,10 @@
 package com.kodilla.abstracts.homework.homework2;
 
 public abstract class Job {
-    int salary;
-    String firstName;
-    int age;
-    String job;
+    private int salary;
+    private String firstName;
+    private int age;
+    private String job;
 
     public Job(int salary, String firstName, int age, String job){
         this.salary = salary;
@@ -15,4 +15,18 @@ public abstract class Job {
     }
 
     public abstract void showResponsibilites();
+    public abstract void displayIntro();
+
+    public int getAge() {
+        return age;
+    }
+    public int getSalary() {
+        return salary;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getJob() {
+        return job;
+    }
 }

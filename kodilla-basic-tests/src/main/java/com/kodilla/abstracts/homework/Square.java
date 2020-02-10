@@ -34,13 +34,4 @@ public class Square extends Shape {
 
     //dodajemy metody wyświetlające pole i obwód dla zadanych obiektów
 
-    public static void displayParameters(Square anySquare) {
-        double squareArea = anySquare.calculateArea(anySquare.getSideLength(), anySquare.getSideLength2(), anySquare.getRadius());
-        double squareCircumference = anySquare.calculateCircumference(anySquare.getSideLength(), anySquare.getSideLength2(), anySquare.getRadius());
-        String shapeName = anySquare.getShapeName();
-        System.out.println("");
-        System.out.println("This is " + shapeName);
-        System.out.println("The area of " + shapeName + " equals " + squareArea);
-        System.out.println("The circumference of " + shapeName + " equals " + squareCircumference);
-    }
 }
