@@ -1,10 +1,10 @@
 package com.kodilla.collections.interfaces.homework;
 
-public class CarRice {
+public class CarRace {
     public static void main(String[] args) {
         Jaguar jaguar = new Jaguar(100);
         Porshe porshe = new Porshe(100);
-        BMW bmw = new BMW (100);
+        Bmw bmw = new Bmw(100);
 
         doRace(jaguar);
         doRace(porshe);

@@ -1,6 +1,11 @@
 package com.kodilla.bank.homework;
 
+import com.sun.tools.javac.util.List;
+
+import java.util.ArrayList;
+
 public class Bank {
+
     CashMachine machine1 = new CashMachine();
     CashMachine machine2 = new CashMachine();
     CashMachine machine3 = new CashMachine();
@@ -9,13 +14,13 @@ public class Bank {
 
     //tworzę metody wpłat i wypłat w bankomatach
 
-    public int[] addToMachine (CashMachine anyMachine, int value) {
+    public int[] addToMachine(CashMachine anyMachine, int value) {
         return anyMachine.addTransaction(value);
     }
 
     // tworzę metody zwracania tablic ze zrealizowanymi transakcjami
 
-    public int[] historyOfMachine(CashMachine anyMachine){
+    public int[] historyOfMachine(CashMachine anyMachine) {
         return anyMachine.getHistory();
     }
 

@@ -7,9 +7,9 @@ public class Porshe implements Car {
     private int decrease;
     private String carName;
 
-    public Porshe(int speed) {
-        this.speed = speed;
-        this.increase = 50;
+    public Porshe(int increase) {
+        this.speed = 100;
+        this.increase = increase;
         this.decrease = 70;
         this.carName = "Porshe";
     }
@@ -18,6 +18,9 @@ public class Porshe implements Car {
     public int getSpeed() {
         return this.speed;
     }
+
+    @Override
+    public int getIncrease() { return increase; }
 
     @Override
     public int increaseSpeed() {
