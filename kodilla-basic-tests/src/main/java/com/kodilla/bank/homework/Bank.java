@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class Bank {
 
+    //tworzę kolekcję do której będę dodawał nowe bankomaty
+
     List<CashMachine> machines = new ArrayList<>();
 
     //tworzę metody wpłat i wypłat w bankomatach
@@ -19,7 +21,7 @@ public class Bank {
         return anyMachine.getHistory();
     }
 
-// całkowity bilans ze wszystkich transakcji
+    // całkowity bilans ze wszystkich transakcji
 
     public int totalSaldo() {
         int totalSaldo = 0;
@@ -28,7 +30,6 @@ public class Bank {
         }
         return totalSaldo;
     }
-//}
 
     // ilość transakcji związanych z wypłatą
 
