@@ -7,30 +7,29 @@ public class Application {
 
         //utwórzmy obiekty na podstawie klasy Square
 
-        Square square1 = new Square(20, 20, 0, "square1");
+        Shape square1 = new Square(20);
         displayParameters(square1);
-        Square square2 = new Square(80, 80, 0, "square2");
+        Shape square2 = new Square(80);
         displayParameters(square2);
-        Square square3 = new Square(10, 10, 0, "square3");
+        Shape square3 = new Square(10);
         displayParameters(square3);
-
 
         //tworzę nowe obiekty na podstawie klasy Rectangle
 
-        Rectangle rectangle1 = new Rectangle(10, 20, 0, "rectangle1");
+        Rectangle rectangle1 = new Rectangle(10, 20);
         displayParameters(rectangle1);
-        Rectangle rectangle2 = new Rectangle(17, 13, 0, "rectangle2");
+        Rectangle rectangle2 = new Rectangle(17, 13);
         displayParameters(rectangle2);
-        Rectangle rectangle3 = new Rectangle(1, 190, 0, "rectangle3");
+        Rectangle rectangle3 = new Rectangle(1,90);
         displayParameters(rectangle3);
 
         //tworzę nowe obiekty na podstawie klasy Circle
 
-        Circle circle1 = new Circle(0, 0, 10, "circle1");
+        Circle circle1 = new Circle(10);
         displayParameters(circle1);
-        Circle circle2 = new Circle(0, 0, 20, "circle2");
+        Circle circle2 = new Circle(20);
         displayParameters(circle2);
-        Circle circle3 = new Circle(0, 0, 30, "circle3");
+        Circle circle3 = new Circle(30);
         displayParameters(circle3);
     }
 }

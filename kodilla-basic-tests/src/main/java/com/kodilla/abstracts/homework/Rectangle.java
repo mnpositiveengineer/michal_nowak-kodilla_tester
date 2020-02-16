@@ -2,36 +2,23 @@ package com.kodilla.abstracts.homework;
 
 public class Rectangle extends Shape {
 
-    //narzucono nam stworzenie konstruktora
+    private int sideLength;
+    private int sideLength2;
 
-    public Rectangle(int sideLength, int sideLength2, int radius, String shapeName) {
-        super(sideLength, sideLength2, radius, shapeName);
-    }
-
-    @Override
-    public double calculateArea() {
-        return 0;
-    }
-
-    @Override
-    public double calculateCircumference() {
-        return 0;
+    public Rectangle (int sideLength, int sideLength2){
+        this.sideLength = sideLength;
+        this.sideLength2 = sideLength2;
     }
 
     //narzucono nam zaimplementowanie metody obliczającej powierzchnię
 
-
-    public double calculateArea(int sideLength, int sideLength2, int radius) {
-        return sideLength * sideLength2;
+    public double calculateArea() {
+        return this.sideLength * this.sideLength2;
     }
 
     //narzucono nam zaimplementowanie metody obliczającej obwód
 
-
-    public double calculateCircumference(int sideLength, int sideLength2, int radius) {
-        return sideLength * 2 + sideLength2 *2;
+    public double calculateCircumference() {
+        return this.sideLength * 2 + this.sideLength2 *2;
     }
-
-    //dodajemy metody wyświetlające pole i obwód dla zadanych obiektów
-
 }
