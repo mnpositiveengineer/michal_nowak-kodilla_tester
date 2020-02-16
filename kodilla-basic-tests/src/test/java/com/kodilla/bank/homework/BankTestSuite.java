@@ -2,24 +2,33 @@ package com.kodilla.bank.homework;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BankTestSuite {
 
     @Test // sprawdź czy liczy poprawnie saldo w bankomacie
-    public void ShouldCountTotalAmountOfMoneyInTheMachine(){
+    public void ShouldCountTotalAmountOfMoneyInTheMachine() {
         Bank bank = new Bank();
 
-        bank.addToMachine(bank.machine1, 10);
-        bank.addToMachine(bank.machine1, -10);
-        bank.addToMachine(bank.machine2, 20);
-        bank.addToMachine(bank.machine2, -20);
-        bank.addToMachine(bank.machine3, 30);
-        bank.addToMachine(bank.machine3, -30);
-        bank.addToMachine(bank.machine4, 40);
-        bank.addToMachine(bank.machine4, -40);
-        bank.addToMachine(bank.machine5, 50);
-        bank.addToMachine(bank.machine5, -50);
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+
+        bank.addToMachine(bank.machines.get(0), 10);
+        bank.addToMachine(bank.machines.get(0), -10);
+        bank.addToMachine(bank.machines.get(1), 20);
+        bank.addToMachine(bank.machines.get(1), -20);
+        bank.addToMachine(bank.machines.get(2), 30);
+        bank.addToMachine(bank.machines.get(2), -30);
+        bank.addToMachine(bank.machines.get(3), 40);
+        bank.addToMachine(bank.machines.get(3), -40);
+        bank.addToMachine(bank.machines.get(4), 50);
+        bank.addToMachine(bank.machines.get(4), -50);
 
         int totalSaldo = bank.totalSaldo();
 
@@ -30,16 +39,22 @@ public class BankTestSuite {
     public void ShouldCountOnlyInPlusTransaction(){
         Bank bank = new Bank();
 
-        bank.addToMachine(bank.machine1, 10);
-        bank.addToMachine(bank.machine1, -10);
-        bank.addToMachine(bank.machine2, 20);
-        bank.addToMachine(bank.machine2, -30);
-        bank.addToMachine(bank.machine3, 30);
-        bank.addToMachine(bank.machine3, -30);
-        bank.addToMachine(bank.machine4, 40);
-        bank.addToMachine(bank.machine4, -50);
-        bank.addToMachine(bank.machine5, 50);
-        bank.addToMachine(bank.machine5, -50);
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+
+        bank.addToMachine(bank.machines.get(0), 10);
+        bank.addToMachine(bank.machines.get(0), -10);
+        bank.addToMachine(bank.machines.get(1), 20);
+        bank.addToMachine(bank.machines.get(1), -30);
+        bank.addToMachine(bank.machines.get(2), 30);
+        bank.addToMachine(bank.machines.get(2), -30);
+        bank.addToMachine(bank.machines.get(3), 40);
+        bank.addToMachine(bank.machines.get(3), -50);
+        bank.addToMachine(bank.machines.get(4), 50);
+        bank.addToMachine(bank.machines.get(4), -50);
 
         int inPlusTransaction = bank.totalInPlusTransaction();
 
@@ -49,16 +64,23 @@ public class BankTestSuite {
     @Test // sprawdź czy liczy poprawnie wypłaty
     public void ShouldCountOnlyInMinusTransaction(){
         Bank bank = new Bank();
-        bank.addToMachine(bank.machine1, 10);
-        bank.addToMachine(bank.machine1, -10);
-        bank.addToMachine(bank.machine2, 20);
-        bank.addToMachine(bank.machine2, -30);
-        bank.addToMachine(bank.machine3, 30);
-        bank.addToMachine(bank.machine3, -30);
-        bank.addToMachine(bank.machine4, 40);
-        bank.addToMachine(bank.machine4, -50);
-        bank.addToMachine(bank.machine5, 50);
-        bank.addToMachine(bank.machine5, -50);
+
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+
+        bank.addToMachine(bank.machines.get(0), 10);
+        bank.addToMachine(bank.machines.get(0), -10);
+        bank.addToMachine(bank.machines.get(1), 20);
+        bank.addToMachine(bank.machines.get(1), -30);
+        bank.addToMachine(bank.machines.get(2), 30);
+        bank.addToMachine(bank.machines.get(2), -30);
+        bank.addToMachine(bank.machines.get(3), 40);
+        bank.addToMachine(bank.machines.get(3), -50);
+        bank.addToMachine(bank.machines.get(4), 50);
+        bank.addToMachine(bank.machines.get(4), -50);
 
         int inMinusTransaction = bank.totalInMinusTransaction();
 
@@ -68,16 +90,23 @@ public class BankTestSuite {
     @Test // sprawdź czy liczy poprawnie średnią wypłat
     public void ShouldCountAverageOfInMinusTransaction(){
         Bank bank = new Bank();
-        bank.addToMachine(bank.machine1, 10);
-        bank.addToMachine(bank.machine1, -10);
-        bank.addToMachine(bank.machine2, 20);
-        bank.addToMachine(bank.machine2, -30);
-        bank.addToMachine(bank.machine3, 30);
-        bank.addToMachine(bank.machine3, -30);
-        bank.addToMachine(bank.machine4, 40);
-        bank.addToMachine(bank.machine4, -50);
-        bank.addToMachine(bank.machine5, 50);
-        bank.addToMachine(bank.machine5, 0);
+
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+
+        bank.addToMachine(bank.machines.get(0), 10);
+        bank.addToMachine(bank.machines.get(0), -10);
+        bank.addToMachine(bank.machines.get(1), 20);
+        bank.addToMachine(bank.machines.get(1), -30);
+        bank.addToMachine(bank.machines.get(2), 30);
+        bank.addToMachine(bank.machines.get(2), -30);
+        bank.addToMachine(bank.machines.get(3), 40);
+        bank.addToMachine(bank.machines.get(3), -50);
+        bank.addToMachine(bank.machines.get(4), 50);
+        bank.addToMachine(bank.machines.get(4), 0);
 
         double averageInMinusTransaction = bank.averageOfInMinusTransaction();
 
@@ -87,16 +116,23 @@ public class BankTestSuite {
     @Test // sprawdź czy liczy poprawnie średnią wpłat
     public void ShouldCountAverageOfInPlusTransaction(){
         Bank bank = new Bank();
-        bank.addToMachine(bank.machine1, 10);
-        bank.addToMachine(bank.machine1, -10);
-        bank.addToMachine(bank.machine2, 20);
-        bank.addToMachine(bank.machine2, -30);
-        bank.addToMachine(bank.machine3, 30);
-        bank.addToMachine(bank.machine3, -30);
-        bank.addToMachine(bank.machine4, 40);
-        bank.addToMachine(bank.machine4, -50);
-        bank.addToMachine(bank.machine5, 50);
-        bank.addToMachine(bank.machine5, 0);
+
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+
+        bank.addToMachine(bank.machines.get(0), 10);
+        bank.addToMachine(bank.machines.get(0), -10);
+        bank.addToMachine(bank.machines.get(1), 20);
+        bank.addToMachine(bank.machines.get(1), -30);
+        bank.addToMachine(bank.machines.get(2), 30);
+        bank.addToMachine(bank.machines.get(2), -30);
+        bank.addToMachine(bank.machines.get(3), 40);
+        bank.addToMachine(bank.machines.get(3), -50);
+        bank.addToMachine(bank.machines.get(4), 50);
+        bank.addToMachine(bank.machines.get(4), 0);
 
         double averageInPlusTransaction = bank.averageOfInPlusTransaction();
 
@@ -106,27 +142,35 @@ public class BankTestSuite {
     @Test // prywatne sprawdzenie czy tworzą się odpowiednie tablice transakcji w poszczególnych bankomatach
     public void MyOwnPersonalTestToCheckHistoryOfMachines(){
         Bank bank = new Bank();
-        bank.addToMachine(bank.machine1, 10);
-        bank.addToMachine(bank.machine1, -20);
-        bank.addToMachine(bank.machine1, 10);
-        bank.addToMachine(bank.machine2, 20);
-        bank.addToMachine(bank.machine2, 30);
-        bank.addToMachine(bank.machine2, -10);
-        bank.addToMachine(bank.machine3, -10);
-        bank.addToMachine(bank.machine3, -20);
-        bank.addToMachine(bank.machine3, 30);
-        bank.addToMachine(bank.machine4, 0);
-        bank.addToMachine(bank.machine4, 0);
-        bank.addToMachine(bank.machine4, 10);
-        bank.addToMachine(bank.machine5, 20);
-        bank.addToMachine(bank.machine5, -10);
-        bank.addToMachine(bank.machine5, -10);
 
-        int[] checkMachine1 = bank.historyOfMachine(bank.machine1);
-        int[] checkMachine2 = bank.historyOfMachine(bank.machine2);
-        int[] checkMachine3 = bank.historyOfMachine(bank.machine3);
-        int[] checkMachine4 = bank.historyOfMachine(bank.machine4);
-        int[] checkMachine5 = bank.historyOfMachine(bank.machine5);
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+        bank.machines.add(new CashMachine());
+
+        bank.addToMachine(bank.machines.get(0), 10);
+        bank.addToMachine(bank.machines.get(0), -20);
+        bank.addToMachine(bank.machines.get(0), 10);
+        bank.addToMachine(bank.machines.get(1), 20);
+        bank.addToMachine(bank.machines.get(1), 30);
+        bank.addToMachine(bank.machines.get(1), -10);
+        bank.addToMachine(bank.machines.get(2), -10);
+        bank.addToMachine(bank.machines.get(2), -20);
+        bank.addToMachine(bank.machines.get(2), 30);
+        bank.addToMachine(bank.machines.get(3), 0);
+        bank.addToMachine(bank.machines.get(3), 0);
+        bank.addToMachine(bank.machines.get(3), 10);
+        bank.addToMachine(bank.machines.get(4), 20);
+        bank.addToMachine(bank.machines.get(4), -10);
+        bank.addToMachine(bank.machines.get(4), -10);
+
+        int[] checkMachine1 = bank.historyOfMachine(bank.machines.get(0));
+        int[] checkMachine2 = bank.historyOfMachine(bank.machines.get(1));
+        int[] checkMachine3 = bank.historyOfMachine(bank.machines.get(2));
+        int[] checkMachine4 = bank.historyOfMachine(bank.machines.get(3));
+        int[] checkMachine5 = bank.historyOfMachine(bank.machines.get(4));
+
 
         assertEquals(10, checkMachine1[1]);
         assertEquals(-10, checkMachine2[2]);

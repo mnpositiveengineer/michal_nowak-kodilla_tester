@@ -1,16 +1,11 @@
 package com.kodilla.bank.homework;
 
-import com.sun.tools.javac.util.List;
-
+import java.util.List;
 import java.util.ArrayList;
 
 public class Bank {
 
-    CashMachine machine1 = new CashMachine();
-    CashMachine machine2 = new CashMachine();
-    CashMachine machine3 = new CashMachine();
-    CashMachine machine4 = new CashMachine();
-    CashMachine machine5 = new CashMachine();
+    List<CashMachine> machines = new ArrayList<>();
 
     //tworzę metody wpłat i wypłat w bankomatach
 
@@ -24,45 +19,66 @@ public class Bank {
         return anyMachine.getHistory();
     }
 
-    // całkowity bilans ze wszystkich transakcji
+// całkowity bilans ze wszystkich transakcji
 
-    public int totalSaldo(){
-        return machine1.getSaldo() + machine2.getSaldo() + machine3.getSaldo() + machine4.getSaldo() + machine5.getSaldo();
+    public int totalSaldo() {
+        int totalSaldo = 0;
+        for (int i = 0; i < machines.size(); i++) {
+            totalSaldo = totalSaldo + machines.get(i).getSaldo();
+        }
+        return totalSaldo;
     }
+//}
 
     // ilość transakcji związanych z wypłatą
 
-    public int totalInMinusTransaction(){
-        return machine1.getInMinusTransaction() + machine2.getInMinusTransaction() + machine3.getInMinusTransaction() + machine4.getInMinusTransaction() + machine5.getInMinusTransaction();
+    public int totalInMinusTransaction() {
+        int totalInMinusTransaction = 0;
+        for (int i = 0; i < machines.size(); i++) {
+            totalInMinusTransaction = totalInMinusTransaction + machines.get(i).getInMinusTransaction();
+        }
+        return totalInMinusTransaction;
     }
 
     // ilość transakcji związanych z wpłątą
 
-    public int totalInPlusTransaction(){
-        return machine1.getInPlusTransaction() + machine2.getInPlusTransaction() + machine3.getInPlusTransaction() + machine4.getInPlusTransaction() + machine5.getInPlusTransaction();
+    public int totalInPlusTransaction() {
+        int totalInPlusTransaction = 0;
+        for (int i = 0; i < machines.size(); i++) {
+            totalInPlusTransaction = totalInPlusTransaction + machines.get(i).getInPlusTransaction();
+        }
+        return totalInPlusTransaction;
     }
 
     // suma transakcji związanych z wypłatą - do średniej
 
-    public int totalSumOfInMinusTransaction(){
-        return machine1.getSumOfInMinusTransaction() + machine2.getSumOfInMinusTransaction() + machine3.getSumOfInMinusTransaction() + machine4.getSumOfInMinusTransaction() + machine5.getSumOfInMinusTransaction();
+    public int totalSumOfInMinusTransaction() {
+        int totalSumOfInMinusTransaction = 0;
+        for (int i = 0; i < machines.size(); i++) {
+            totalSumOfInMinusTransaction = totalSumOfInMinusTransaction + machines.get(i).getSumOfInMinusTransaction();
+        }
+        return totalSumOfInMinusTransaction;
     }
 
     // suma transakcji związanych z wpłatą - do średniej
 
-    public int totalSumOfInPlusTransaction(){
-        return machine1.getSumOfInPlusTransaction() + machine2.getSumOfInPlusTransaction() + machine3.getSumOfInPlusTransaction() + machine4.getSumOfInPlusTransaction() + machine5.getSumOfInPlusTransaction();
+    public int totalSumOfInPlusTransaction() {
+        int totalSumOfInPlusTransaction = 0;
+        for (int i = 0; i < machines.size(); i++) {
+            totalSumOfInPlusTransaction = totalSumOfInPlusTransaction + machines.get(i).getSumOfInPlusTransaction();
+        }
+        return totalSumOfInPlusTransaction;
     }
 
     // średnia wartość wypłaty
 
-    public double averageOfInMinusTransaction(){
-        return totalSumOfInMinusTransaction()/totalInMinusTransaction();
+    public double averageOfInMinusTransaction() {
+        return totalSumOfInMinusTransaction() / totalInMinusTransaction();
     }
 
     // średnia wartość wpłaty
 
-    public double averageOfInPlusTransaction(){
-        return totalSumOfInPlusTransaction()/totalInPlusTransaction();
+    public double averageOfInPlusTransaction() {
+        return totalSumOfInPlusTransaction() / totalInPlusTransaction();
     }
 }
