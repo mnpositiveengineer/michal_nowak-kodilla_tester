@@ -39,19 +39,5 @@ public class Porshe implements Car {
         return carName;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Porshe porshe = (Porshe) o;
-        return speed == porshe.speed &&
-                increase == porshe.increase &&
-                decrease == porshe.decrease &&
-                Objects.equals(carName, porshe.carName);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(speed, increase, decrease, carName);
-    }
 }

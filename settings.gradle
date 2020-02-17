@@ -3,4 +3,5 @@ include 'Zadanie_cwiczymy_petle'
 include 'kodilla-basic-tests'
 include 'Tablice-trening'
 include 'kodilla-collections'
+include 'kodilla-collections-advanced'
 

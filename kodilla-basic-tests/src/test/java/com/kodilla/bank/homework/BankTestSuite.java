@@ -10,11 +10,9 @@ public class BankTestSuite {
     public void ShouldCountTotalAmountOfMoneyInTheMachine() {
         Bank bank = new Bank();
 
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
+        for (int i =0; i < 5; i++){
+            bank.machines.add(new CashMachine());
+        }
 
         bank.addToMachine(bank.machines.get(0), 10);
         bank.addToMachine(bank.machines.get(0), -10);
@@ -36,11 +34,9 @@ public class BankTestSuite {
     public void ShouldCountOnlyInPlusTransaction(){
         Bank bank = new Bank();
 
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
+        for (int i =0; i < 5; i++){
+            bank.machines.add(new CashMachine());
+        }
 
         bank.addToMachine(bank.machines.get(0), 10);
         bank.addToMachine(bank.machines.get(0), -10);
@@ -62,11 +58,9 @@ public class BankTestSuite {
     public void ShouldCountOnlyInMinusTransaction(){
         Bank bank = new Bank();
 
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
+        for (int i =0; i < 5; i++){
+            bank.machines.add(new CashMachine());
+        }
 
         bank.addToMachine(bank.machines.get(0), 10);
         bank.addToMachine(bank.machines.get(0), -10);
@@ -88,11 +82,9 @@ public class BankTestSuite {
     public void ShouldCountAverageOfInMinusTransaction(){
         Bank bank = new Bank();
 
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
+        for (int i =0; i < 5; i++){
+            bank.machines.add(new CashMachine());
+        }
 
         bank.addToMachine(bank.machines.get(0), 10);
         bank.addToMachine(bank.machines.get(0), -10);
@@ -114,11 +106,9 @@ public class BankTestSuite {
     public void ShouldCountAverageOfInPlusTransaction(){
         Bank bank = new Bank();
 
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
+        for (int i =0; i < 5; i++){
+            bank.machines.add(new CashMachine());
+        }
 
         bank.addToMachine(bank.machines.get(0), 10);
         bank.addToMachine(bank.machines.get(0), -10);
@@ -140,11 +130,9 @@ public class BankTestSuite {
     public void MyOwnPersonalTestToCheckHistoryOfMachines(){
         Bank bank = new Bank();
 
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
-        bank.machines.add(new CashMachine());
+        for (int i =0; i < 5; i++){
+            bank.machines.add(new CashMachine());
+        }
 
         bank.addToMachine(bank.machines.get(0), 10);
         bank.addToMachine(bank.machines.get(0), -20);
@@ -167,7 +155,6 @@ public class BankTestSuite {
         int[] checkMachine3 = bank.historyOfMachine(bank.machines.get(2));
         int[] checkMachine4 = bank.historyOfMachine(bank.machines.get(3));
         int[] checkMachine5 = bank.historyOfMachine(bank.machines.get(4));
-
 
         assertEquals(10, checkMachine1[1]);
         assertEquals(-10, checkMachine2[2]);

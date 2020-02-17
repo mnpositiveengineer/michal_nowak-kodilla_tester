@@ -11,7 +11,6 @@ public class Square extends Shape {
 
     //narzucono nam zaimplementowanie metody obliczającej powierzchnię
 
-
     public double calculateArea() {
         return this.sideLength * this.sideLength;
     }

@@ -12,12 +12,14 @@ import java.util.List;
 public class CarsListApplication {
     public static void main(String[] args) {
         List<Car> cars = new ArrayList<>();
+        Car porsche = new Porshe(60);
         cars.add(new Jaguar(50));
-        cars.add(new Porshe(60));
+        cars.add(porsche);
         cars.add(new Bmw(70));
 
         cars.remove(0);
-        cars.remove(new Porshe(60));
+        cars.remove(porsche);
+        cars.remove(new Bmw(70));
 
         System.out.println(cars.size());
 
