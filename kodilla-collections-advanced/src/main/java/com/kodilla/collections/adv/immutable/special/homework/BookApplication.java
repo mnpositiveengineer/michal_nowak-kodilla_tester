@@ -1,5 +1,7 @@
 package com.kodilla.collections.adv.immutable.special.homework;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class BookApplication {
@@ -8,17 +10,20 @@ public class BookApplication {
         //tworzę obiekt klasy BookManager
         BookManager bookManager = new BookManager();
 
-        //dodaję książki do kolekcji
-        bookManager.createBook("Agile Development", "James Shore");
-        bookManager.createBook("Design", "Peter Fiell");
-        bookManager.createBook("Chris Voss", "Never split the differences");
-        bookManager.createBook("Chris Voss", "Never split the differences");
+        //tworzę listę, której pozycje będę odczytywał przy porównaniu obiektów.
+        List<Book> bookList = new ArrayList<>();
+
+        //dodaję książki do kolekcji i do listy
+        bookList.add(bookManager.createBook("Agile Development", "James Shore"));
+        bookList.add(bookManager.createBook("Design", "Peter Fiell"));
+        bookList.add(bookManager.createBook("Chris Voss", "Never split the differences"));
+        bookList.add(bookManager.createBook("Chris Voss", "Never split the differences"));
 
         //porównuje dwa obiekty
-        System.out.println(bookManager.createBook("Chris Voss", "Never split the differences").equals(bookManager.createBook("Chris Voss", "Never split the differences")));
+        System.out.println(bookList.get(2).equals(bookList.get(3)));
 
         //porównuje dwa adresy obiektów
-        System.out.println(bookManager.createBook("Chris Voss", "Never split the differences") == bookManager.createBook("Chris Voss", "Never split the differences"));
+        System.out.println(bookList.get(2) == bookList.get(3));
 
         //tworzę kolekjcę książek, do której wrzucam metodę z innej klasy
         Set<Book> books = bookManager.getBooks();
@@ -27,7 +32,5 @@ public class BookApplication {
         for (Book book : books){
             System.out.println(book);
         }
-
-
     }
 }
