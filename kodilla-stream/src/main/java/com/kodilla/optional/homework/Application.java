@@ -14,8 +14,8 @@ public class Application {
 
         for (Student student : students){
             Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
-            optionalTeacher.orElse( new Teacher("undefined"));
-            System.out.println("Student: " + student.getName() + ", Teacher: " + student.getTeacher().getName());
+            Teacher teacher1 = optionalTeacher.orElse( new Teacher("undefined"));
+            System.out.println("Student: " + student.getName() + ", Teacher: " + teacher1.getName());
         }
     }
 }
