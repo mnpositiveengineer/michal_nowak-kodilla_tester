@@ -16,7 +16,7 @@ public class CarsListApplication {
         cars.add(new Jaguar(50));
         cars.add(porsche);
         cars.add(new Bmw(70));
-
+        System.out.println(cars.size());
         cars.remove(0);
         cars.remove(porsche);
         cars.remove(new Bmw(70));

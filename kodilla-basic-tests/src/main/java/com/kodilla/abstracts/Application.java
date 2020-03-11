@@ -10,5 +10,5 @@ public class Application {
         AnimalProcessor processor = new AnimalProcessor();
         processor.process(duck);
         processor.process(dog);
-    }
+}
 }

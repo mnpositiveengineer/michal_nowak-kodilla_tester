@@ -4,7 +4,6 @@ public class Square extends Shape {
 
     private int sideLength;
 
-
     public Square (int sideLength){
         this.sideLength = sideLength;
     }
@@ -16,7 +15,6 @@ public class Square extends Shape {
     }
 
     //narzucono nam zaimplementowanie metody obliczającej obwód
-
 
     public double calculateCircumference(){
         return this.sideLength * 4;
