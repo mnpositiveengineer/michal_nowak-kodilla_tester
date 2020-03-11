@@ -6,8 +6,8 @@ public class ForumStats {
     public static void main(String[] args) {
         double avg1 = UsersRepository.getUsersList()
                 .stream()
-                .filter(u -> u.getAge() <=40)
-                .map (u -> u.getNumberOfPosts())
+                .filter(u -> u.getAge()>=40)
+                .map(u -> u.getNumberOfPosts())
                 .mapToInt(u -> u)
                 .average()
                 .getAsDouble();
@@ -15,12 +15,11 @@ public class ForumStats {
 
         double avg2 = UsersRepository.getUsersList()
                 .stream()
-                .filter(u -> u.getAge()>40)
-                .map (u -> u.getNumberOfPosts())
+                .filter(u -> u.getAge()<40)
+                .map(u -> u.getNumberOfPosts())
                 .mapToInt(u -> u)
                 .average()
                 .getAsDouble();
         System.out.println(avg2);
     }
-
 }
