@@ -10,7 +10,7 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("4"));
 
         try {
-            warehouse.getOrder("5");
+            warehouse.getOrder("2");
             System.out.println("You have picked your order");
         } catch (OrderDoesntExistException e) {
             System.out.println("There is no such order!");
