@@ -25,6 +25,10 @@ public class GamblingMachine {
         if (numbers.stream().anyMatch(number -> number < 1)) {
             throw new InvalidNumbersException();
         }
+
+        if (numbers.stream().anyMatch(number -> number > 49)) {
+            throw new InvalidNumbersException();
+        }
     }
 
     private Set<Integer> generateComputerNumbers() {

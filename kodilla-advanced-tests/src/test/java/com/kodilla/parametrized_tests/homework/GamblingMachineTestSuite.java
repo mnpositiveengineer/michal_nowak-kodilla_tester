@@ -50,4 +50,21 @@ public class GamblingMachineTestSuite {
             System.out.println("Tests return Exception.");
         }
     }
+    @ParameterizedTest
+    @CsvFileSource(resources = "/CorrectSetOfNumbersToValidate.csv", numLinesToSkip = 0)
+    public void ShouldReturnTrueWhenSetOfNumbersGivenInSourceFileAreValid(String string) throws InvalidNumbersException {
+
+        String[] splitedString = string.split(" ");
+
+        Set<Integer> validSets = new HashSet<>();
+
+        for (String number : splitedString){
+            validSets.add(Integer.parseInt(number));
+        }
+
+        int counted = gamblingMachine.howManyWins(validSets);
+        boolean result = counted >=0 && counted <=6;
+        assertTrue(result);
+    }
+
 }
