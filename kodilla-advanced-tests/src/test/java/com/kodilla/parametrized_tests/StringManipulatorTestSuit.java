@@ -34,6 +34,12 @@ public class StringManipulatorTestSuit {
         assertEquals(expected, stringManipulator.getStringLengthWithoutSpaces(input));
     }
 
+    @ParameterizedTest
+    @MethodSource (value = "com.kodilla.parametrized_tests.SourceMethod#ProvideStringForTestingLength")
+    public void ShouldCalculateStringLengthWithoutSpacesUsingClassWithMethod(String input, int expected){
+        assertEquals(expected, stringManipulator.getStringLengthWithoutSpaces(input));
+    }
+
     private static Stream<Arguments> ShouldCalculateStringLengthWithoutSpacesUsingMethod() {
         return Stream.of(
             Arguments.of("test", 4),
