@@ -3,6 +3,7 @@ package com.youtube;
 import javax.crypto.spec.PSource;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -74,6 +75,8 @@ public class SimpleStreams {
                 .map(u -> u.getName().toLowerCase())
                 .collect(Collectors.toList());
         System.out.println(sortedNames);
+
+        Set<Integer> knames = Set.of(1, 2, 3, 4, 5);
 
 
 
