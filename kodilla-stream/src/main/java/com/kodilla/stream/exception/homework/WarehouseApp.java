@@ -1,7 +1,7 @@
 package com.kodilla.stream.exception.homework;
 
 public class WarehouseApp {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws OrderDoesntExistException {
         Warehouse warehouse = new Warehouse();
 
         warehouse.addOrder(new Order("1"));
@@ -10,10 +10,10 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("4"));
 
         try {
-            warehouse.getOrder("2");
+            warehouse.getOrder("5");
             System.out.println("You have picked your order");
         } catch (OrderDoesntExistException e) {
-            System.out.println("There is no such order!");
+            throw new OrderDoesntExistException();
         } finally {
             System.out.println("Thank you");
         }
