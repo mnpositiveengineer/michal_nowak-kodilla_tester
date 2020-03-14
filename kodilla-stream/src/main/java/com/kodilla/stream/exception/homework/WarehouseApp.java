@@ -13,7 +13,8 @@ public class WarehouseApp {
             warehouse.getOrder("5");
             System.out.println("You have picked your order");
         } catch (OrderDoesntExistException e) {
-            throw new OrderDoesntExistException();
+            String message = new OrderDoesntExistException().getMessage();
+            System.out.println(message);
         } finally {
             System.out.println("Thank you");
         }
