@@ -1,0 +1,15 @@
+package com.kodilla.stream.homework;
+
+public enum Groups {
+    BAKER,
+    DOCTOR,
+    SANTA_CLAUS,
+    POLICEMAN,
+    FIREMAN,
+    ACTOR,
+    JUNIOR_OFFICE_ADMINISTRATOR,
+    PRINCIPAL_MOBILITY_EXECUTIVE,
+    HUMAN_SOLUTION_DESIGNER,
+    TV_PRESENTER,
+    PRESIDENT,
+}

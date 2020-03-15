@@ -10,7 +10,7 @@ public class OptionalExample {
 
         Optional<Users> optionalUsers = Optional.ofNullable(user);
 
-        String username = optionalUsers.orElse(new Users("No user", 0, 0, "")).getUsername();
+        String username = optionalUsers.orElse(new Users(null, 0, 0, null)).toString();
 
         System.out.println(username);
 

@@ -1,22 +1,25 @@
 package com.kodilla.stream;
 
+import com.kodilla.stream.homework.Groups;
+import com.kodilla.stream.homework.UserName;
+
 import java.util.Objects;
 
 public class Users {
-    private String username;
+    private UserName userName;
     private int age;
     private int numberOfPosts;
-    private String group;
+    private Groups group;
 
-    public Users(String username, int age, int numberOfPosts, String group) {
-        this.username = username;
+    public Users(UserName userName, int age, int numberOfPosts, Groups group) {
+        this.userName = userName;
         this.age = age;
         this.numberOfPosts = numberOfPosts;
         this.group = group;
     }
 
-    public String getUsername() {
-        return username;
+    public UserName getUserName() {
+        return userName;
     }
 
     public int getAge() {
@@ -27,7 +30,7 @@ public class Users {
         return numberOfPosts;
     }
 
-    public String getGroup() {
+    public Groups getGroup() {
         return group;
     }
 
@@ -38,12 +41,22 @@ public class Users {
         Users users = (Users) o;
         return age == users.age &&
                 numberOfPosts == users.numberOfPosts &&
-                Objects.equals(username, users.username) &&
-                Objects.equals(group, users.group);
+                userName == users.userName &&
+                group == users.group;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, age, numberOfPosts, group);
+        return Objects.hash(userName, age, numberOfPosts, group);
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "userName=" + userName +
+                ", age=" + age +
+                ", numberOfPosts=" + numberOfPosts +
+                ", group=" + group +
+                '}';
     }
 }
