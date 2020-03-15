@@ -11,7 +11,7 @@ public class ShopTestSuite {
     Shop shop = new Shop();
 
     @BeforeEach
-    public void add_To_Orders() {
+    public void add_To_Orders() throws NullOrderException {
         shop.addOrder(new Order("Order1", 100.99, LocalDate.of(2020, 01, 3), "abcd"));
         shop.addOrder(new Order("Order2", 110.99, LocalDate.of(2020, 01, 4), "efgh"));
         shop.addOrder(new Order("Order3", 120.99, LocalDate.of(2020, 01, 5), "ijkl"));
@@ -30,7 +30,16 @@ public class ShopTestSuite {
     }
 
     @Test
-    public void Should_Get_Orders_From_Given_Range_Of_Dates() throws NoOrderException {
+    public void Should_Return_Exception_When_Adding_Null_Order() throws NullOrderException {
+        try {
+            shop.addOrder(null);
+        } catch (NullOrderException e){
+            assertEquals("Create and order first.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void Should_Get_Orders_From_Given_Range_Of_Dates() throws NoOrderInGivenRangeException {
         //GIVEN (FOR DATES BETWEEN 04.01.2020 and 06.01.2020)
         List<Order> expectedList = new ArrayList<>();
         expectedList.add(new Order("Order2", 110.99, LocalDate.of(2020, 01, 4), "efgh"));
@@ -47,16 +56,16 @@ public class ShopTestSuite {
     }
 
     @Test
-    public void Should_Return_Exception_When_There_Is_No_Order_In_Given_Range_Of_Dates() throws NoOrderException {
+    public void Should_Return_Exception_When_There_Is_No_Order_In_Given_Range_Of_Dates() throws NoOrderInGivenRangeException {
         try {
             shop.getOrdersFromGivenRangeOfDates(LocalDate.of(2019, 01, 3), LocalDate.of(2019, 01, 6));
-        } catch (NoOrderException e) {
-            System.out.println("No order in given range");
+        } catch (NoOrderInGivenRangeException e) {
+            assertEquals("There is no order in given range", e.getMessage());
         }
     }
 
     @Test
-    public void Should_Get_Orders_From_Given_Range_Of_Values() throws NoOrderException {
+    public void Should_Get_Orders_From_Given_Range_Of_Values() throws NoOrderInGivenRangeException {
         //GIVEN (FOR PRICES BETWEEN 100 and 130)
         List<Order> expectedList = new ArrayList<>();
         expectedList.add(new Order("Order1", 100.99, LocalDate.of(2020, 01, 3), "abcd"));
@@ -73,11 +82,11 @@ public class ShopTestSuite {
     }
 
     @Test
-    public void Should_Return_Exception_When_There_Is_No_Order_In_Given_Range_Of_Values() throws NoOrderException {
+    public void Should_Return_Exception_When_There_Is_No_Order_In_Given_Range_Of_Values() throws NoOrderInGivenRangeException {
         try {
             shop.getOrdersFromGivenRangeOfValues(0, 50);
-        } catch (NoOrderException e) {
-            System.out.println("No order in given range");
+        } catch (NoOrderInGivenRangeException e) {
+            assertEquals("There is no order in given range", e.getMessage());
         }
     }
 

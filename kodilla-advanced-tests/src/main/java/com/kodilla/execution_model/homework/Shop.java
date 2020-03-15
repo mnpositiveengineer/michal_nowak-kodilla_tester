@@ -8,15 +8,15 @@ import java.util.Set;
 public class Shop {
     Set<Order> orders = new HashSet<>();
 
-    public void addOrder(Order order){
+    public void addOrder(Order order) throws NullOrderException{
         orders.add(order);
     }
 
-    public List<Order> getOrdersFromGivenRangeOfDates(LocalDate min, LocalDate max) throws NoOrderException{
+    public List<Order> getOrdersFromGivenRangeOfDates(LocalDate min, LocalDate max) throws NoOrderInGivenRangeException {
         return null;
     }
 
-    public List<Order> getOrdersFromGivenRangeOfValues(double min, double max) throws NoOrderException{
+    public List<Order> getOrdersFromGivenRangeOfValues(double min, double max) throws NoOrderInGivenRangeException {
         return null;
     }
 

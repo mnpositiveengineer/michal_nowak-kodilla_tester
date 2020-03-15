@@ -1,8 +1,8 @@
 package com.kodilla.execution_model.homework;
 
-public class NoOrderException extends Exception {
+public class NoOrderInGivenRangeException extends Exception {
 
-    public NoOrderException(){
+    public NoOrderInGivenRangeException(){
         super("There is no order in given range");
     }
 }
