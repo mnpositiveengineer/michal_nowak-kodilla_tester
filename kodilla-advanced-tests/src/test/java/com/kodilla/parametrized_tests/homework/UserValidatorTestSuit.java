@@ -1,9 +1,10 @@
 package com.kodilla.parametrized_tests.homework;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.lang.reflect.Executable;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -11,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class UserValidatorTestSuit {
 
     private UserValidator userValidator = new UserValidator();
+
 
     @ParameterizedTest
     @ValueSource(strings = {"abC", "Xyz", "123","._-abc" })
@@ -41,4 +43,5 @@ public class UserValidatorTestSuit {
     public void ShouldReturnFalseWhenTheEmailIsNotOk(String value){
         assertFalse(userValidator.validateEmail(value));
     }
+
 }

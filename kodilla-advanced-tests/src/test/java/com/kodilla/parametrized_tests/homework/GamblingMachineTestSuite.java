@@ -6,13 +6,14 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class GamblingMachineTestSuite {
 
@@ -25,13 +26,11 @@ public class GamblingMachineTestSuite {
         invalidSet.add(1);
         invalidSet.add(2);
         invalidSet.add(3);
-        //THEN
+        //WHEN
         try {
             int result = gamblingMachine.howManyWins(invalidSet);
         } catch (InvalidNumbersException e) {
-            System.out.println("Wrong numbers provided");
-        } finally {
-            System.out.println("Test returns Exception.");
+            assertEquals("Wrong numbers provided", e.getMessage());
         }
     }
 
@@ -50,9 +49,7 @@ public class GamblingMachineTestSuite {
         try {
             gamblingMachine.howManyWins(invalidSets);
         } catch (InvalidNumbersException e) {
-            System.out.println("Wrong numbers provided");
-        } finally {
-            System.out.println("Tests return Exception.");
+            assertEquals("Wrong numbers provided", e.getMessage());
         }
     }
     @ParameterizedTest
@@ -78,9 +75,7 @@ public class GamblingMachineTestSuite {
         try {
             gamblingMachine.howManyWins(invalidSet);
         } catch (InvalidNumbersException e) {
-            System.out.println("Wrong numbers provided");
-        } finally {
-            System.out.println("Tests return Exception.");
+            assertEquals("Wrong numbers provided", e.getMessage());
         }
     }
 
