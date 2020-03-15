@@ -8,9 +8,12 @@ public class Task {
     private LocalDate opened;
     private LocalDate deadline;
 
-    public Task(String name, LocalDate opened, LocalDate deadline) {
+    public Task(String name, LocalDate opened, LocalDate deadline) throws InvalidDateException {
         this.name = name;
         this.opened = opened;
+        if(deadline.isBefore(opened)){
+            throw new InvalidDateException();
+        }
         this.deadline = deadline;
     }
 
