@@ -2,7 +2,6 @@ package com.youtube.exceptions;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -67,11 +66,11 @@ public class SimpleExamples {
 
         // TRYING TO WRITE STRING AS INTEGER NumberFormatException
 
-        try {
-            int num = Integer.parseInt("String");
-        } catch (NumberFormatException e) {
-            System.out.println("NumberFormatException");
-        }
+//        try {
+//            int num = Integer.parseInt("String");
+//        } catch (InvalidArgumentException e) {
+//            System.out.println("NumberFormatException");
+//        }
 
         // ARRAY OUT OF BOUND EXCEPTION
 
@@ -84,53 +83,53 @@ public class SimpleExamples {
 
         // TRY IN TRY
 
-        try {
-            try {
-                int num = Integer.parseInt("Edureka");
-                System.out.println(num);
-            } catch (NumberFormatException e) {
-                System.out.println(e);
-            }
-            try {
-                int[] b = new int[5];
-                a[7] = 9;
-            } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println(e);
-            }
-            System.out.println("Other Statement");
-        } catch (Exception e) {
-            System.out.println("Handled and recovered");
-        }
+//        try {
+//            try {
+//                int num = Integer.parseInt("Edureka");
+//                System.out.println(num);
+//            } catch (InvalidArgumentException e) {
+//                System.out.println(e);
+//            }
+//            try {
+//                int[] b = new int[5];
+//                a[7] = 9;
+//            } catch (ArrayIndexOutOfBoundsException e) {
+//                System.out.println(e);
+//            }
+//            System.out.println("Other Statement");
+//        } catch (Exception e) {
+//            System.out.println("Handled and recovered");
+//        }
 
-        // MULTIPLE CATCH
-
-        System.out.println("---------------------------");
-
-        try {
-            int num = Integer.parseInt("Edureka");
-            System.out.println(num);
-        } catch (NumberFormatException e) {
-            System.out.println(e);
-        } catch (Exception e) {
-            System.out.println("Handled");
-        }
-
-        System.out.println("another multiply catch example");
-
-        try {
-            int[] table = new int[5];
-            table[5] = 1;
-        } catch (ArithmeticException e){
-            System.out.println("This is arithmetic exception.");
-        } catch (NumberFormatException e) {
-            System.out.println("This is number format exception.");
-        } catch (NullPointerException e) {
-            System.out.println("This is null pointer exception.");
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("This is Index Out Of Bound Exception.");
-        } catch (Exception e) {
-            System.out.println("This is some unknown exception.");
-        }
+//        // MULTIPLE CATCH
+//
+//        System.out.println("---------------------------");
+//
+//        try {
+//            int num = Integer.parseInt("Edureka");
+//            System.out.println(num);
+//        } catch (InvalidArgumentException e) {
+//            System.out.println(e);
+//        } catch (Exception e) {
+//            System.out.println("Handled");
+//        }
+//
+//        System.out.println("another multiply catch example");
+//
+//        try {
+//            int[] table = new int[5];
+//            table[5] = 1;
+//        } catch (ArithmeticException e){
+//            System.out.println("This is arithmetic exception.");
+//        } catch (InvalidArgumentException e) {
+//            System.out.println("This is number format exception.");
+//        } catch (NullPointerException e) {
+//            System.out.println("This is null pointer exception.");
+//        } catch (IndexOutOfBoundsException e) {
+//            System.out.println("This is Index Out Of Bound Exception.");
+//        } catch (Exception e) {
+//            System.out.println("This is some unknown exception.");
+//        }
 
         // THROW AN EXCEPTION FOR FUN
 

@@ -1,11 +1,13 @@
 package com.kodilla.stream.homework;
 
+import com.youtube.exceptions.InvalidArgumentException;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class TaskManager {
-    public static void main(String[] args) throws InvalidDateException {
+    public static void main(String[] args) {
         try {
             List<LocalDate> deadlines = TaskRepository.getTasks()
                     .stream()
@@ -14,7 +16,7 @@ public class TaskManager {
                     .collect(Collectors.toList());
             System.out.println(deadlines);
 
-        } catch (InvalidDateException e){
+        } catch (InvalidDateException | InvalidInputException e){
             System.out.println(e.getMessage());
         }
     }

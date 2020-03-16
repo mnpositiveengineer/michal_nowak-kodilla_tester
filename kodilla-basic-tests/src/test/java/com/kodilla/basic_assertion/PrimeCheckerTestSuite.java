@@ -1,9 +1,7 @@
 package com.kodilla.basic_assertion;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PrimeCheckerTestSuite {
     private PrimeChecker checker = new PrimeChecker();

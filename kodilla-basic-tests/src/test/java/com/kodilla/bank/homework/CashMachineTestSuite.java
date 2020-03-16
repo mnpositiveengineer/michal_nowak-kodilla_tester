@@ -1,8 +1,7 @@
 package com.kodilla.bank.homework;
 
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CashMachineTestSuite {
     @Test //sprawdzenie czy wartości są dodawane do tablicy

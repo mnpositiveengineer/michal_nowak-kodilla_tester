@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.*;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ShopTestSuite {
 
@@ -28,7 +29,6 @@ public class ShopTestSuite {
         shop.orders.clear();
         assertEquals(0, shop.orders.size());
     }
-
     @Test
     public void Should_Return_Exception_When_Adding_Null_Order() throws NullOrderException {
         try {
@@ -36,6 +36,18 @@ public class ShopTestSuite {
         } catch (NullOrderException e){
             assertEquals("Create and order first.", e.getMessage());
         }
+    }
+
+    //DODATKOWY TEST Z UŻYCIEM METODY NA KTÓRĄ POZWALA JUNIT4 (import static org.junit.Assert.*;)
+
+    @org.junit.Test (expected = NullOrderException.class)
+    public void Should_Return_Exception_When_Adding_Null_Order_Second_Method() throws NullOrderException {
+        shop.addOrder(null);
+    }
+    //DODATKOWY TEST Z UŻYCIEM METODY assertThrows - musiałem dodać bibliotekę import static org.junit.jupiter.api.Assertions.*;
+    @Test
+    public void Should_Return_Exception_When_Adding_Null_Order_Third_Method() throws NullOrderException {
+        assertThrows(NullOrderException.class, () ->shop.addOrder(null), "Null Order Exception");
     }
 
     @Test
@@ -62,6 +74,13 @@ public class ShopTestSuite {
         } catch (NoOrderInGivenRangeException e) {
             assertEquals("There is no order in given range", e.getMessage());
         }
+    }
+
+    //DODATKOWY TEST Z UŻYCIEM METODY NA KTÓRĄ POZWALA JUNIT4
+
+    @org.junit.Test (expected = NoOrderInGivenRangeException.class)
+    public void Should_Return_Exception_When_There_Is_No_Order_In_Given_Range_Of_Dates_Second_Method() throws NoOrderInGivenRangeException {
+        shop.getOrdersFromGivenRangeOfDates(LocalDate.of(2019, 01, 3), LocalDate.of(2019, 01, 6));
     }
 
     @Test
