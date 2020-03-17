@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.*;
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 
 public class ShopTestSuite {
 
@@ -21,13 +21,13 @@ public class ShopTestSuite {
 
     @Test
     public void Should_Return_Four_Orders() {
-        assertEquals(4, shop.orders.size());
+        assertEquals(4, shop.getNumbersOfOrders());
     }
 
     @Test
     public void Should_Return_Zero_Orders() {
         shop.orders.clear();
-        assertEquals(0, shop.orders.size());
+        assertEquals(0, shop.getNumbersOfOrders());
     }
     @Test
     public void Should_Return_Exception_When_Adding_Null_Order() throws NullOrderException {
@@ -40,15 +40,15 @@ public class ShopTestSuite {
 
     //DODATKOWY TEST Z UŻYCIEM METODY NA KTÓRĄ POZWALA JUNIT4 (import static org.junit.Assert.*;)
 
-    @org.junit.Test (expected = NullOrderException.class)
-    public void Should_Return_Exception_When_Adding_Null_Order_Second_Method() throws NullOrderException {
-        shop.addOrder(null);
-    }
+//    @org.junit.Test (expected = NullOrderException.class)
+//    public void Should_Return_Exception_When_Adding_Null_Order_Second_Method() throws NullOrderException {
+//        shop.addOrder(null);
+//    }
     //DODATKOWY TEST Z UŻYCIEM METODY assertThrows - musiałem dodać bibliotekę import static org.junit.jupiter.api.Assertions.*;
-    @Test
-    public void Should_Return_Exception_When_Adding_Null_Order_Third_Method() throws NullOrderException {
-        assertThrows(NullOrderException.class, () ->shop.addOrder(null), "Null Order Exception");
-    }
+//    @Test
+//    public void Should_Return_Exception_When_Adding_Null_Order_Third_Method() throws NullOrderException {
+//        assertThrows(NullOrderException.class, () ->shop.addOrder(null), "Null Order Exception");
+//    }
 
     @Test
     public void Should_Get_Orders_From_Given_Range_Of_Dates() throws NoOrderInGivenRangeException {
@@ -57,14 +57,12 @@ public class ShopTestSuite {
         expectedList.add(new Order("Order2", 110.99, LocalDate.of(2020, 01, 4), "efgh"));
         expectedList.add(new Order("Order3", 120.99, LocalDate.of(2020, 01, 5), "ijkl"));
         expectedList.add(new Order("Order4", 130.99, LocalDate.of(2020, 01, 6), "mnop"));
-        //WHEN
-        Order order1 = shop.getOrdersFromGivenRangeOfDates(LocalDate.of(2020, 01, 4),LocalDate.of(2020, 01, 6)).get(0);
-        Order order2 = shop.getOrdersFromGivenRangeOfDates(LocalDate.of(2020, 01, 4),LocalDate.of(2020, 01, 6)).get(1);
-        Order order3 = shop.getOrdersFromGivenRangeOfDates(LocalDate.of(2020, 01, 4),LocalDate.of(2020, 01, 6)).get(2);
+        //WHEN (FOR DATES BETWEEN 04.01.2020 and 06.01.2020)
+        List<Order> actualList = shop.getOrdersFromGivenRangeOfDates(LocalDate.of(2020, 01, 4),LocalDate.of(2020, 01, 6));
         //THEN
-        assertEquals(expectedList.get(0), order1);
-        assertEquals(expectedList.get(1), order2);
-        assertEquals(expectedList.get(2), order3);
+        assertEquals(expectedList.get(0), actualList.get(0));
+        assertEquals(expectedList.get(1), actualList.get(1));
+        assertEquals(expectedList.get(2), actualList.get(2));
     }
 
     @Test
@@ -78,10 +76,10 @@ public class ShopTestSuite {
 
     //DODATKOWY TEST Z UŻYCIEM METODY NA KTÓRĄ POZWALA JUNIT4
 
-    @org.junit.Test (expected = NoOrderInGivenRangeException.class)
-    public void Should_Return_Exception_When_There_Is_No_Order_In_Given_Range_Of_Dates_Second_Method() throws NoOrderInGivenRangeException {
-        shop.getOrdersFromGivenRangeOfDates(LocalDate.of(2019, 01, 3), LocalDate.of(2019, 01, 6));
-    }
+//    @org.junit.Test (expected = NoOrderInGivenRangeException.class)
+//    public void Should_Return_Exception_When_There_Is_No_Order_In_Given_Range_Of_Dates_Second_Method() throws NoOrderInGivenRangeException {
+//        shop.getOrdersFromGivenRangeOfDates(LocalDate.of(2019, 01, 3), LocalDate.of(2019, 01, 6));
+//    }
 
     @Test
     public void Should_Get_Orders_From_Given_Range_Of_Values() throws NoOrderInGivenRangeException {

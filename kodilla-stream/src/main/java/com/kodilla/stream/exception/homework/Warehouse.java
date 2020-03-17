@@ -11,6 +11,10 @@ public class Warehouse {
         orders.add(order);
     }
 
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
     public Optional<Order> getOrder(String number) throws OrderDoesntExistException {
         if (orders.contains(new Order(number))) {
             Optional<Order> order = orders
@@ -21,5 +25,7 @@ public class Warehouse {
         } else {
             throw new OrderDoesntExistException();
         }
+
+
     }
 }
