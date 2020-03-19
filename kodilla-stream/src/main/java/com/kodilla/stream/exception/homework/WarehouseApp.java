@@ -4,19 +4,12 @@ import java.util.Random;
 import java.util.Set;
 
 public class WarehouseApp {
-    public static void main(String[] args) throws OrderDoesntExistException {
+    public static void main(String[] args) {
         Warehouse warehouse = new Warehouse();
-        System.out.println(generateOrders().size());
 
-        try {
-            generateOrders().;
-            System.out.println("You have picked your order");
-        } catch (OrderDoesntExistException e) {
-            String message = new OrderDoesntExistException().getMessage();
-            System.out.println(message);
-        } finally {
-            System.out.println("Thank you");
-        }
+        System.out.println(generateOrders().size());
+        generateOrders();
+        System.out.println("You have picked your order");
     }
 
     private static Set<Order> generateOrders() {

@@ -1,18 +1,14 @@
 package com.kodilla.stream.homework;
 
-import com.youtube.exceptions.InvalidArgumentException;
-
 import java.time.LocalDate;
-import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Task {
+
     private String name;
     private LocalDate opened;
     private LocalDate deadline;
-
-    Scanner scanner = new Scanner(System.in);
 
     public Task(String name, LocalDate opened, LocalDate deadline) throws InvalidDateException, InvalidInputException {
         this.name = name;
