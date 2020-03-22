@@ -21,16 +21,23 @@ public class SubscriptionManager {
     }
 
     public void removeSubscriberFromLocation(Subscriber subscriber, Location location) throws NoLocationException {
-        if (generalSubscription.containsKey(location)) {
+        if (generalSubscription.containsKey(location) && generalSubscription.get(location).contains(subscriber)) {
             generalSubscription.get(location).remove(subscriber);
         } else {
             throw new NoLocationException();
         }
+        if (generalSubscription.get(location).size()==0) {
+            removeLocation(location);
+        }
     }
 
-    public void removeSubscriberFromAllLocation(Subscriber subscriber) {
-        for(Map.Entry<Location, Set<Subscriber>> locations : generalSubscription.entrySet()){
-            locations.getValue().remove(subscriber);
+    public void removeSubscriberFromAllLocation(Subscriber subscriber) throws NoLocationException {
+        for(Map.Entry<Location, Set<Subscriber>> locations : generalSubscription.entrySet()) {
+            if (locations.getValue().contains(subscriber)) {
+                locations.getValue().remove(subscriber);
+            } else {
+                throw new NoLocationException();
+            }
         }
     }
 
@@ -73,5 +80,9 @@ public class SubscriptionManager {
                 subscriber.receiveGeneralNote();
             }
         }
+    }
+
+    public Map<Location, Set<Subscriber>> getGeneralSubscription() {
+        return generalSubscription;
     }
 }
