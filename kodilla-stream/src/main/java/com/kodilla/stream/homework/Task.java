@@ -46,23 +46,29 @@ public class Task {
     private static LocalDate validateDate(LocalDate opened, LocalDate deadline) throws InvalidDateException, InvalidInputException {
 
         Scanner scanner = new Scanner(System.in);
+        int doWhile = 1;
+        while (doWhile != 2) {
+            if (deadline.isBefore(opened)) {
+                throw new InvalidDateException();
+            } else if (deadline.equals(opened)) {
+                System.out.println("Deadline is the same as Date of Open. Are you sure? - type 1 (for yes) and press enter. If no, type 2");
+                try {
+                    int userAnswer = scanner.nextInt();
+                    if (userAnswer == 1) {
+                        return deadline;
+                    } else if (userAnswer == 2) {
+                        throw new InvalidDateException();
+                    } else {
 
-        if (deadline.isBefore(opened)) {
-            throw new InvalidDateException();
-        } else if (deadline.equals(opened)) {
-            System.out.println("Deadline is the same as Date of Open. Are you sure? - type 1 (for yes) and press enter. If no, type any sign and press enter.");
-            try {
-                int userAnswer = scanner.nextInt();
-                if (userAnswer == 1) {
-                    return deadline;
-                } else {
+                        throw new InvalidInputException();
+                    }
+                } catch (Exception a) {
                     throw new InvalidInputException();
                 }
-            } catch (Exception e) {
-                throw new InvalidInputException();
+            } else {
+                return deadline;
             }
-        } else {
-            return deadline;
         }
+        return deadline;
     }
 }

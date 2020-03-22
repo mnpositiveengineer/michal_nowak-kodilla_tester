@@ -14,6 +14,8 @@ public class Application {
 
         for(Student student : students){
             System.out.println("Student: " + student.getTeacher().getName() + "; Teacher: " + student.getTeacher().getName());
+
+            System.out.println();
         }
     }
 }
