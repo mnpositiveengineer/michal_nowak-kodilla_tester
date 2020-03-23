@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Utils {
 
-    public int getRandomInt(int min, int max) {
-        return new Random().nextInt(min)+max;
+    public int getRandomInt(int bound, int extra) {
+        return new Random().nextInt(bound)+extra;
     }
 }

@@ -1,5 +1,6 @@
 package com.kodilla.mockito.homework;
 
+import javax.security.auth.login.LoginException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -32,13 +33,20 @@ public class SubscriptionManager {
     }
 
     public void removeSubscriberFromAllLocation(Subscriber subscriber) throws NoLocationException {
-        for(Map.Entry<Location, Set<Subscriber>> locations : generalSubscription.entrySet()) {
-            if (locations.getValue().contains(subscriber)) {
-                locations.getValue().remove(subscriber);
+        for(Map.Entry<Location, Set<Subscriber>> location : generalSubscription.entrySet()) {
+            if (location.getValue().contains(subscriber)) {
+                location.getValue().remove(subscriber);
+                if (location.getValue()==null){
+                }
             } else {
                 throw new NoLocationException();
             }
+
         }
+        Set<Map.Entry<Location, Set<Subscriber>>> e = generalSubscription.entrySet();
+              e.remove(e.stream().filter(object -> object.getValue().equals(subscriber)).findFirst().orElseThrow(NoLocationException::new));
+
+
     }
 
     public void removeLocation (Location location) throws NoLocationException {
