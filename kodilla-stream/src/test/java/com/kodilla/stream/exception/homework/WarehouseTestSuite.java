@@ -15,14 +15,14 @@ public class WarehouseTestSuite {
     @Test
     public void ShouldReturnOrderWhenItExists() throws OrderDoesntExistException {
         warehouse.addOrder(new Order("1"));
-        Optional<Order> result = warehouse.getOrder("1");
-        assertEquals("1", result.get().getNumber());
+        Order result = warehouse.getOrder("1");
+        assertEquals("1", result.getNumber());
     }
 
     @Test (expected = OrderDoesntExistException.class)
     public void ShouldReturnExceptionWhenOrderDoesNotExist() throws OrderDoesntExistException {
         warehouse.addOrder(new Order("1"));
-        Optional<Order> result = warehouse.getOrder("2");
+        Order result = warehouse.getOrder("2");
     }
 
     @Rule
@@ -33,6 +33,6 @@ public class WarehouseTestSuite {
         thrown.expect(OrderDoesntExistException.class);
         thrown.expectMessage("Order does not exist dude!");
         warehouse.addOrder(new Order("1"));
-        Optional<Order> result = warehouse.getOrder("2");
+        Order result = warehouse.getOrder("2");
     }
 }

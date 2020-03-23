@@ -9,7 +9,7 @@ public class WarehouseApp {
 
     public static void main(String[] args) {
         generateOrders();
-        String orderString = Integer.toString(utils.getRandomInt(100,1));
+        String orderString = Integer.toString(utils.getRandomInt(100, 1));
         try {
             warehouse.getOrder(orderString);
             System.out.println("You have picked your order number: " + orderString);
@@ -21,8 +21,8 @@ public class WarehouseApp {
     }
 
     private static Set<Order> generateOrders() {
-        for (int i =0; i < utils.getRandomInt(100,1); i++){
-            warehouse.addOrder(new Order(Integer.toString(utils.getRandomInt(100,1))));
+        for (int i = 0; i < utils.getRandomInt(100, 1); i++) {
+            warehouse.addOrder(new Order(Integer.toString(utils.getRandomInt(100, 1))));
         }
         return warehouse.getOrders();
     }
