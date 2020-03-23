@@ -1,12 +1,16 @@
 package com.kodilla.spring.basic.spring_dependency_injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 @Component
 public class SimpleApplication {
 
-    private SkypeMessageService messageService;
+    @Autowired
+    private MessageService messageService;
 
     public String processMessage(String message, String receiver) {
         if (checkReceiver(receiver)) {
@@ -19,8 +23,4 @@ public class SimpleApplication {
         return receiver != null && !receiver.isEmpty();
     }
 
-    @Autowired
-    public void setMessageService(SkypeMessageService messageService) {
-        this.messageService = messageService;
-    }
 }
