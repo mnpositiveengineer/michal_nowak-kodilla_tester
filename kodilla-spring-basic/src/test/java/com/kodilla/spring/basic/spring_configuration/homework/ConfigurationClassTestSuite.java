@@ -9,13 +9,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class ConfigurationClassTestSuite {
 
     ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
     Car car = (Car) context.getBean("getCar");
+    Car car1= (Car) context.getBean("getCar");
+
+    @Test
+    public void checkCars() {
+        Assertions.assertEquals(car, car1);
+    }
 
     @Test
     public void getCarTesting() {

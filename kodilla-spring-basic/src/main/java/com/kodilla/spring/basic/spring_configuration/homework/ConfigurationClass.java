@@ -4,11 +4,13 @@ import org.springframework.context.annotation.Bean;
 import java.util.Random;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class ConfigurationClass {
 
     Random random = new Random();
+
 
     @Bean
     public Car getCar () {
