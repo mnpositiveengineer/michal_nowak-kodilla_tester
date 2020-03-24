@@ -113,9 +113,9 @@ public class GamblingMachineTestSuite {
 
     private Set<Integer> addToMachineThreeNumbers(){
         Set<Integer> invalidSet = new HashSet<>();
-        invalidSet.add(1);
-        invalidSet.add(2);
-        invalidSet.add(3);
+        for (int i = 1; i < 4; i++) {
+            invalidSet.add(i);
+        }
         return invalidSet;
     }
 
