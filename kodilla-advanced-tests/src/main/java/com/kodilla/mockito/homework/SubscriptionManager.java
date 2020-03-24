@@ -36,17 +36,14 @@ public class SubscriptionManager {
         for(Map.Entry<Location, Set<Subscriber>> location : generalSubscription.entrySet()) {
             if (location.getValue().contains(subscriber)) {
                 location.getValue().remove(subscriber);
-                if (location.getValue()==null){
-                }
             } else {
                 throw new NoLocationException();
             }
-
         }
-        Set<Map.Entry<Location, Set<Subscriber>>> e = generalSubscription.entrySet();
-              e.remove(e.stream().filter(object -> object.getValue().equals(subscriber)).findFirst().orElseThrow(NoLocationException::new));
-
-
+        Map<Location, Set<Subscriber>> newGeneralSubscription = generalSubscription.entrySet().stream()
+                .filter(mapWithoutZeroLocation -> !(mapWithoutZeroLocation.getValue().size() ==0))
+                .collect(Collectors.toMap(map->map.getKey(), map->map.getValue()));
+        generalSubscription = newGeneralSubscription;
     }
 
     public void removeLocation (Location location) throws NoLocationException {

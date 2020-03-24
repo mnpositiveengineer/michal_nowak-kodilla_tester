@@ -227,7 +227,6 @@ class SubscriptionManagerTestSuite {
         */
         subscriptionManager.removeSubscriberFromAllLocation(subscriber1);
         subscriptionManager.removeSubscriberFromAllLocation(subscriber2);
-
         Assertions.assertThrows(NoLocationException.class, ()->subscriptionManager.sendGeneralNote());
     }
     @Test
