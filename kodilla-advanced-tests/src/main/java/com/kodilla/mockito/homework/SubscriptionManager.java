@@ -27,13 +27,16 @@ public class SubscriptionManager {
         } else {
             throw new NoLocationException();
         }
-        if (generalSubscription.get(location).size()==0) {
+        if (generalSubscription.get(location).size() == 0) {
             removeLocation(location);
         }
     }
 
+    //------------TUTAJ JEST TA FUNKCJA, KTÓRĄ NAPRAWIŁEM--------------------------------------------
+    // USUWANIE SUBSKRYBENTÓW ZOSTAWIŁEM W IF ALE USUWANIE LOKALIZACJI Z PUSTYMI LISTAMI SUBSKRYBENTÓW ZROBIŁEM STREAMEM
+
     public void removeSubscriberFromAllLocation(Subscriber subscriber) throws NoLocationException {
-        for(Map.Entry<Location, Set<Subscriber>> location : generalSubscription.entrySet()) {
+        for (Map.Entry<Location, Set<Subscriber>> location : generalSubscription.entrySet()) {
             if (location.getValue().contains(subscriber)) {
                 location.getValue().remove(subscriber);
             } else {
@@ -41,12 +44,12 @@ public class SubscriptionManager {
             }
         }
         Map<Location, Set<Subscriber>> newGeneralSubscription = generalSubscription.entrySet().stream()
-                .filter(mapWithoutZeroLocation -> !(mapWithoutZeroLocation.getValue().size() ==0))
-                .collect(Collectors.toMap(map->map.getKey(), map->map.getValue()));
+                .filter(mapWithoutZeroLocation -> !(mapWithoutZeroLocation.getValue().size() == 0))
+                .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
         generalSubscription = newGeneralSubscription;
     }
 
-    public void removeLocation (Location location) throws NoLocationException {
+    public void removeLocation(Location location) throws NoLocationException {
         if (generalSubscription.containsKey(location)) {
             Set<Subscriber> temporaryList = generalSubscription.get(location).stream().collect(Collectors.toSet());
             generalSubscription.remove(location);
@@ -63,7 +66,7 @@ public class SubscriptionManager {
         }
     }
 
-    public void sendLocationNote (Location location) throws NoLocationException {
+    public void sendLocationNote(Location location) throws NoLocationException {
         if (generalSubscription.containsKey(location)) {
             for (Subscriber subscriber : generalSubscription.get(location)) {
                 subscriber.receiveLocationNote(location);
@@ -73,8 +76,8 @@ public class SubscriptionManager {
         }
     }
 
-    public void sendGeneralNote () throws NoLocationException {
-        if (generalSubscription.isEmpty()){
+    public void sendGeneralNote() throws NoLocationException {
+        if (generalSubscription.isEmpty()) {
             throw new NoLocationException();
         } else {
             Set<Subscriber> setOfSubscribers = new HashSet<>();

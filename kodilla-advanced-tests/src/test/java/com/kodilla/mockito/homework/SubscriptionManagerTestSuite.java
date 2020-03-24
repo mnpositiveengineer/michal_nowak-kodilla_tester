@@ -25,7 +25,7 @@ class SubscriptionManagerTestSuite {
 
 
     @Test
-    public void Should_Receive_Note_For_Location_When_Added_To_Location () throws NoLocationException {
+    public void Should_Receive_Note_For_Location_When_Added_To_Location() throws NoLocationException {
         /*
                Test Case:
                  1. Add subscriber 1 to location 1
@@ -38,7 +38,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-    public void Should_Receive_General_Note_When_Added_To_Location () throws NoLocationException {
+    public void Should_Receive_General_Note_When_Added_To_Location() throws NoLocationException {
         /*
                 Test Case:
                     1. Add subscriber 1 to location 1
@@ -51,7 +51,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-    public void Should_Receive_Only_One_General_Note_When_Added_To_Multiple_Location () throws NoLocationException {
+    public void Should_Receive_Only_One_General_Note_When_Added_To_Multiple_Location() throws NoLocationException {
                 /*
                 Test Case:
                     1. Add subscriber 1 to location 1
@@ -65,7 +65,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-    public void Should_Receive_Only_One_Location_Note_When_Added_Multiple_Times_To_Location () throws NoLocationException {
+    public void Should_Receive_Only_One_Location_Note_When_Added_Multiple_Times_To_Location() throws NoLocationException {
         /*
             Test Case:
                 1. Add subscriber 1 to location 1
@@ -80,7 +80,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-    public void Should_Allow_Unsubscribe_From_Any_Location_And_Do_Not_Receive_Note_For_This_Location () throws NoLocationException {
+    public void Should_Allow_Unsubscribe_From_Any_Location_And_Do_Not_Receive_Note_For_This_Location() throws NoLocationException {
         /*
              Test Case:
                 1. Add subscriber 1 to location 1
@@ -95,7 +95,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-    public void Should_Allow_Unsubscribe_From_Every_Location_And_Do_Not_Receive_General_Notes () throws NoLocationException {
+    public void Should_Allow_Unsubscribe_From_Every_Location_And_Do_Not_Receive_General_Notes() throws NoLocationException {
         /*
             Test Case:
                 1. Add subscriber 1 to location 1
@@ -111,7 +111,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-    public void Should_Allow_Unsubscribe_From_Every_Location_And_Do_Not_Receive_Notes_For_Locations () throws NoLocationException {
+    public void Should_Allow_Unsubscribe_From_Every_Location_And_Do_Not_Receive_Notes_For_Locations() throws NoLocationException {
         /*
             Test Case:
                 1. Add subscriber 1 to location 1
@@ -130,7 +130,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-    public void Should_Not_Receive_Note_For_Location_While_Not_Subscribing_This_Location () throws NoLocationException {
+    public void Should_Not_Receive_Note_For_Location_While_Not_Subscribing_This_Location() throws NoLocationException {
         /*
             Test Case:
                 1. Add subscriber 1 to location 1
@@ -162,7 +162,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-    public void Should_Allow_Remove_Location_And_Users_From_This_Location_Will_Be_Still_Receiving_General_Notes () throws NoLocationException {
+    public void Should_Allow_Remove_Location_And_Users_From_This_Location_Will_Be_Still_Receiving_General_Notes() throws NoLocationException {
         /*
             Test Case:
                 1. Add subscriber 1 to location 1
@@ -214,7 +214,7 @@ class SubscriptionManagerTestSuite {
     }
 
     @Test
-   public void Should_Return_Exception_When_There_Is_No_Person_In_Any_Location_To_Send_General_Note() throws NoLocationException {
+    public void Should_Return_Exception_When_There_Is_No_Person_In_Any_Location_To_Send_General_Note() throws NoLocationException {
         /*
             Test Case:
                 1. Add subscriber 1 to location 1
@@ -227,8 +227,9 @@ class SubscriptionManagerTestSuite {
         */
         subscriptionManager.removeSubscriberFromAllLocation(subscriber1);
         subscriptionManager.removeSubscriberFromAllLocation(subscriber2);
-        Assertions.assertThrows(NoLocationException.class, ()->subscriptionManager.sendGeneralNote());
+        Assertions.assertThrows(NoLocationException.class, () -> subscriptionManager.sendGeneralNote());
     }
+
     @Test
     public void Should_Return_Exception_When_We_Try_To_Remove_Subscriber_From_All_Locations_And_Subscriber_Is_Already_Removed() throws NoLocationException {
         /*
@@ -241,7 +242,7 @@ class SubscriptionManagerTestSuite {
 	            1. Return NoLocationException
         */
         subscriptionManager.removeSubscriberFromAllLocation(subscriber1);
-        Assertions.assertThrows(NoLocationException.class, ()->subscriptionManager.removeSubscriberFromAllLocation(subscriber1));
+        Assertions.assertThrows(NoLocationException.class, () -> subscriptionManager.removeSubscriberFromAllLocation(subscriber1));
     }
 
 
@@ -256,7 +257,7 @@ class SubscriptionManagerTestSuite {
 	            1. Return NoLocationException
         */
         subscriptionManager.removeSubscriberFromLocation(subscriber1, location1);
-        Assertions.assertThrows(NoLocationException.class, ()->subscriptionManager
+        Assertions.assertThrows(NoLocationException.class, () -> subscriptionManager
                 .removeSubscriberFromLocation(subscriber1, location1));
     }
 
@@ -271,7 +272,7 @@ class SubscriptionManagerTestSuite {
 	            1. Return NoLocationException
         */
         subscriptionManager.removeLocation(location1);
-        Assertions.assertThrows(NoLocationException.class, ()->subscriptionManager.removeSubscriberFromLocation(subscriber1, location1));
+        Assertions.assertThrows(NoLocationException.class, () -> subscriptionManager.removeSubscriberFromLocation(subscriber1, location1));
     }
 
     @Test
@@ -285,12 +286,12 @@ class SubscriptionManagerTestSuite {
 	            1. Return NoLocationException
         */
         subscriptionManager.removeLocation(location1);
-        Assertions.assertThrows(NoLocationException.class, ()->subscriptionManager.removeLocation(location1));
+        Assertions.assertThrows(NoLocationException.class, () -> subscriptionManager.removeLocation(location1));
     }
 
     //-------------------------------------METHODS----------------------------------------------------------------------
 
-    private void verifyOneTimeReceiveLocationNote(Subscriber subscriber, Location location){
+    private void verifyOneTimeReceiveLocationNote(Subscriber subscriber, Location location) {
         Mockito.verify(subscriber, Mockito.times(1)).receiveLocationNote(location);
     }
 
@@ -298,7 +299,7 @@ class SubscriptionManagerTestSuite {
         Mockito.verify(subscriber, Mockito.times(1)).receiveGeneralNote();
     }
 
-    private void verifyZeroTimeReceiveLocationNote(Subscriber subscriber, Location location){
+    private void verifyZeroTimeReceiveLocationNote(Subscriber subscriber, Location location) {
         Mockito.verify(subscriber, Mockito.never()).receiveLocationNote(location);
     }
 
