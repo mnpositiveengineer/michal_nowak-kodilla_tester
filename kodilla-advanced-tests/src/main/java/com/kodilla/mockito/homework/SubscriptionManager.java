@@ -43,10 +43,9 @@ public class SubscriptionManager {
                 throw new NoLocationException();
             }
         }
-        Map<Location, Set<Subscriber>> newGeneralSubscription = generalSubscription.entrySet().stream()
+        generalSubscription = generalSubscription.entrySet().stream()
                 .filter(mapWithoutZeroLocation -> !(mapWithoutZeroLocation.getValue().size() == 0))
                 .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
-        generalSubscription = newGeneralSubscription;
     }
 
     public void removeLocation(Location location) throws NoLocationException {
