@@ -28,10 +28,4 @@ class CalculatorTestSuite {
         Mockito.verify(calculationInTheCloud, Mockito.times(1)).CalculateSomeComplicatedValues(null);
     }
 
-    @Test
-    public void ShouldVerify() {
-        CalculationInTheCloud calculationInTheCloud = Mockito.mock(CalculationInTheCloud.class);
-        Mockito.verify(calculationInTheCloud);
-    }
-
 }
