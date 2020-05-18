@@ -51,7 +51,7 @@ public class UserTestSuite {
         try {
             user.setName(null);
         } catch (IllegalArgumentException e) {
-            assertEquals("Username cannot be blank.", e.getMessage());
+            assertEquals("Userame cannot be blank.", e.getMessage());
         }
     }
 }
