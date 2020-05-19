@@ -70,6 +70,21 @@ public class WalletSteps implements En {
             // Write code here that turns the phrase above into concrete actions
 
         });
+//-------------------------------------------------------------------------------------------------------------------
+        Given("my account has been credited with {int}", (Integer int1) -> {
+            // Write code here that turns the phrase above into concrete actions
+            throw new io.cucumber.java8.PendingException();
+        });
+
+        When("I check my balance", () -> {
+            // Write code here that turns the phrase above into concrete actions
+            throw new io.cucumber.java8.PendingException();
+        });
+
+        Then("I should see that my balance is {int}", (Integer int1) -> {
+            // Write code here that turns the phrase above into concrete actions
+            throw new io.cucumber.java8.PendingException();
+        });
 
     }
 }

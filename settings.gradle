@@ -16,4 +16,6 @@ include 'Selenium_Edureka'
 include 'selenium-guru99'
 include 'kodilla-cucumber'
 include 'kodilla-cucumber'
+include 'SeleniumWithCucumber'
+include 'CucumberWithSelenium'
 
