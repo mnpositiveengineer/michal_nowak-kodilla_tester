@@ -18,4 +18,5 @@ include 'kodilla-cucumber'
 include 'kodilla-cucumber'
 include 'SeleniumWithCucumber'
 include 'CucumberWithSelenium'
+include 'kodilla-code-coverage'
 
