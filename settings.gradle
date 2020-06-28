@@ -19,4 +19,7 @@ include 'kodilla-cucumber'
 include 'SeleniumWithCucumber'
 include 'CucumberWithSelenium'
 include 'kodilla-code-coverage'
+include 'kodilla-soap'
+include 'kodilla-soap-library'
+include 'kodilla-soap'
 

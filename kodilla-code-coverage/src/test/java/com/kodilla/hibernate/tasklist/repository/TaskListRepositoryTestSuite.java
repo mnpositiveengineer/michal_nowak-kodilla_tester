@@ -61,8 +61,6 @@ class TaskListRepositoryTestSuite {
         TaskList taskList = new TaskList("New List", "To Do Tasks");
         taskList.getTasks().add(task1);
         taskList.getTasks().add(task2);
-        task1.setTaskList(taskList);
-        task2.setTaskList(taskList);
         //WHEN
         taskListRepository.save(taskList);
         //THEN

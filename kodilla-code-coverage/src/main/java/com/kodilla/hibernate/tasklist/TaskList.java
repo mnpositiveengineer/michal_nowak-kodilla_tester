@@ -20,7 +20,8 @@ public class TaskList {
     private String listName;
     @Column(name = "description")
     private String description;
-    @OneToMany (targetEntity = Task.class, mappedBy = "taskList", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany (cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn (name = "task_list_id")
     private List<Task> tasks = new ArrayList<>();
 
     public TaskList() {

@@ -24,7 +24,7 @@ public class Task {
     @JoinColumn(name = "task_financial_details_id")
     private TaskFinancialDetails taskFinancialDetails;
     @ManyToOne
-    @JoinColumn (name = "task_list_id")
+    @JoinColumn (name = "task_list_id", insertable = false, nullable = false)
     private TaskList taskList;
 
     public Task() {
@@ -66,5 +66,6 @@ public class Task {
 
     public void setTaskList(TaskList taskList) {
         this.taskList = taskList;
+
     }
 }
