@@ -1,0 +1,14 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:getCourseResponse xmlns:ns2="http://kodilla.com/book/soap">
+            <ns2:book>
+                <ns2:signature>1234MN</ns2:signature>
+                <ns2:title>LOTR</ns2:title>
+                <ns2:author>Tolkien</ns2:author>
+                <ns2:year>1960</ns2:year>
+                <ns2:genre>FANTASY</ns2:genre>
+            </ns2:book>
+        </ns2:getCourseResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
